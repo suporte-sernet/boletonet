@@ -17,9 +17,9 @@ namespace BoletoNet
 
         #endregion
 
-        #region MÈtodos de inst‚ncia
+        #region M√©todos de inst√¢ncia
         /// <summary>
-        /// MÈtodo que far· a verificaÁ„o se a classe est· devidamente implementada para a geraÁ„o da Remessa
+        /// M√©todo que far√° a verifica√ß√£o se a classe est√° devidamente implementada para a gera√ß√£o da Remessa
         /// </summary>
         public override bool ValidarArquivoRemessa(string numeroConvenio, IBanco banco, Cedente cedente, Boletos boletos, int numeroArquivoRemessa, out string mensagem)
         {
@@ -100,7 +100,7 @@ namespace BoletoNet
                 strline = banco.GerarTrailerRemessa(numeroRegistro, TipoArquivo.CNAB400, cedente, vltitulostotal);
 
                 incluiLinha.WriteLine(strline);
-
+                numeroRegistro++;
                 incluiLinha.Close();
                 incluiLinha.Dispose(); // Incluido por Luiz Ponce 07/07/2012.
                 incluiLinha = null; // Incluido por Luiz Ponce 07/07/2012.

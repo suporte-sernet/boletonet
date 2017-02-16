@@ -94,13 +94,13 @@ namespace BoletoNet
                         strline = boleto.Banco.GerarMensagemVariavelRemessa(boleto, ref numeroRegistro, TipoArquivo.CNAB400);
                         if (!string.IsNullOrEmpty(strline) && !string.IsNullOrWhiteSpace(strline))
                             incluiLinha.WriteLine(strline);
+                        numeroRegistro++;
                     }
                 }
 
                 strline = banco.GerarTrailerRemessa(numeroRegistro, TipoArquivo.CNAB400, cedente, vltitulostotal);
 
                 incluiLinha.WriteLine(strline);
-                numeroRegistro++;
                 incluiLinha.Close();
                 incluiLinha.Dispose(); // Incluido por Luiz Ponce 07/07/2012.
                 incluiLinha = null; // Incluido por Luiz Ponce 07/07/2012.
